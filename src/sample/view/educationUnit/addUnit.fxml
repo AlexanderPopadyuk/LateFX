@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="337.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.educationUnit.addUnitController">
+   <children>
+      <Label layoutX="101.0" layoutY="14.0" text="Введіть назву підрозділу" />
+      <TextField fx:id="nameField" layoutX="14.0" layoutY="41.0" prefHeight="25.0" prefWidth="308.0" />
+      <TextField fx:id="addressField" layoutX="14.0" layoutY="103.0" prefHeight="25.0" prefWidth="308.0" />
+      <Label layoutX="128.0" layoutY="78.0" text="Введіть адресу" />
+      <TextField fx:id="phoneField" layoutX="14.0" layoutY="168.0" prefHeight="25.0" prefWidth="308.0" />
+      <Label layoutX="101.0" layoutY="143.0" text="Введіть номер телефону" />
+      <Button layoutX="140.0" layoutY="200.0" mnemonicParsing="false" onAction="#addUnit" text="Додати" />
+   </children>
+</AnchorPane>

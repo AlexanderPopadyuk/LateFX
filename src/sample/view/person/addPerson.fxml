@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="321.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.person.addPersonController">
+   <children>
+      <Label layoutX="57.0" layoutY="26.0" text="Введіть номер студентського квитка" />
+      <TextField fx:id="idField" layoutX="32.0" layoutY="43.0" prefHeight="25.0" prefWidth="254.0" />
+      <TextField fx:id="surnameField" layoutX="32.0" layoutY="96.0" prefHeight="25.0" prefWidth="254.0" />
+      <Label layoutX="112.0" layoutY="79.0" text="Введіть прізвище" />
+      <TextField fx:id="nameField" layoutX="32.0" layoutY="149.0" prefHeight="25.0" prefWidth="254.0" />
+      <Label layoutX="128.0" layoutY="132.0" text="Введіть ім'я" />
+      <Button layoutX="135.0" layoutY="188.0" mnemonicParsing="false" onAction="#addPerson" text="Додати" />
+   </children>
+</AnchorPane>

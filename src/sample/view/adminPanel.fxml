@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.adminPanelController">
+   <children>
+      <ComboBox fx:id="departmentsCB" layoutX="14.0" layoutY="49.0" onAction="#onDepartmentsCBClick" prefHeight="25.0" prefWidth="428.0" />
+      <ComboBox fx:id="cathedralsCB" layoutX="14.0" layoutY="96.0" onAction="#onCathedralsCBClick" prefHeight="25.0" prefWidth="428.0" />
+      <Label layoutX="15.0" layoutY="28.0" text="Факультети та інститути" />
+      <Label layoutX="15.0" layoutY="79.0" text="Кафедри" />
+      <Label layoutX="80.0" layoutY="2.0" text="Чернівецький національний університет ім. Ю. Федьковича">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="453.0" layoutY="49.0" mnemonicParsing="false" onAction="#addNewDepartment" text="Додати" />
+      <Button layoutX="519.0" layoutY="49.0" mnemonicParsing="false" onAction="#deleteDepartment" text="Видалити" />
+      <Button layoutX="453.0" layoutY="96.0" mnemonicParsing="false" onAction="#addNewCathedra" text="Додати" />
+      <Button layoutX="519.0" layoutY="96.0" mnemonicParsing="false" onAction="#deleteCathedra" text="Видалити" />
+      <Label layoutX="15.0" layoutY="179.0" text="Групи" />
+      <ComboBox fx:id="groupsCB" layoutX="14.0" layoutY="196.0" onAction="#onGroupsCBClick" prefHeight="25.0" prefWidth="338.0" />
+      <Button layoutX="453.0" layoutY="196.0" mnemonicParsing="false" onAction="#addNewGroup" text="Додати" />
+      <Button layoutX="519.0" layoutY="196.0" mnemonicParsing="false" onAction="#deleteGroup" text="Видалити" />
+      <Label layoutX="14.0" layoutY="128.0" prefHeight="17.0" prefWidth="62.0" text="Викладачі" />
+      <ComboBox fx:id="professorsCB" layoutX="14.0" layoutY="145.0" prefHeight="25.0" prefWidth="428.0" />
+      <Button layoutX="519.0" layoutY="145.0" mnemonicParsing="false" onAction="#deleteProfessor" text="Видалити" />
+      <Button layoutX="453.0" layoutY="145.0" mnemonicParsing="false" onAction="#addNewProfessor" text="Додати" />
+      <ComboBox fx:id="studentsCB" layoutX="14.0" layoutY="243.0" onAction="#studentChek" prefHeight="25.0" prefWidth="338.0" />
+      <Label layoutX="15.0" layoutY="226.0" text="Студенти" />
+      <Button layoutX="519.0" layoutY="243.0" mnemonicParsing="false" onAction="#deleteStudent" text="Видалити" />
+      <Button layoutX="453.0" layoutY="243.0" mnemonicParsing="false" onAction="#addNewStudent" text="Додати" />
+      <Button layoutX="362.0" layoutY="243.0" mnemonicParsing="false" onAction="#openStudentInfo" text="Інформація" />
+      <Button layoutX="362.0" layoutY="196.0" mnemonicParsing="false" onAction="#openGroupInfo" text="Інформація" />
+      <DatePicker fx:id="lateDate" layoutX="15.0" layoutY="280.0" prefHeight="25.0" prefWidth="396.0" />
+      <Button layoutX="423.0" layoutY="280.0" mnemonicParsing="false" onAction="#addLate" text="Додати в список запізнень" />
+   </children>
+</AnchorPane>

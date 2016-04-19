@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="174.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.educationUnit.addGroupController">
+   <children>
+      <Button layoutX="59.0" layoutY="65.0" mnemonicParsing="false" onAction="#addNewGroup" text="Додати" />
+      <Label layoutX="32.0" layoutY="14.0" text="Введіть назву групи" />
+      <TextField fx:id="nameField" layoutX="12.0" layoutY="31.0" />
+   </children>
+</AnchorPane>

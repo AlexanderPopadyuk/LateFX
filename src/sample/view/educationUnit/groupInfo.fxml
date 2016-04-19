@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="389.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.educationUnit.groupInfoController">
+   <children>
+      <Label layoutX="14.0" layoutY="31.0" text="Назва групи">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="groupName" layoutX="98.0" layoutY="31.0" text="GroupName">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="14.0" text="Кафедра">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="cathedraName" layoutX="98.0" layoutY="14.0" text="CathedraName">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="48.0" text="Куратор">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="65.0" text="Староста">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="82.0" text="Студенти">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ListView fx:id="studentsList" layoutX="14.0" layoutY="106.0" prefHeight="284.0" prefWidth="364.0" />
+      <Label fx:id="kuratorName" layoutX="98.0" layoutY="48.0" text="KuratorName">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="starostaName" layoutX="98.0" layoutY="65.0" text="StarostaName">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
