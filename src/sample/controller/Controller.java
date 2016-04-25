@@ -108,8 +108,7 @@ public class Controller {
         stage.setScene(new Scene(adminPanel));
         stage.show();
     }
-    @FXML
-    public void importJSON() throws IOException{
+    public String getJSON(){
         JSONObject lateJSON = new JSONObject();
 
         for (int i = 0; i < lateList.size(); i++) {
@@ -125,42 +124,13 @@ public class Controller {
                 lateJSON.put("list",ar);
             }
         }
+        /* Запис в файл
         try (FileWriter file = new FileWriter("/Users/Asus/Desktop/sample.json")) {
             file.write(lateJSON.toJSONString());
-        }
-        System.out.println(lateJSON.toJSONString());
-        /**/
-        int serverPort = 1234; // здесь обязательно нужно указать порт к которому привязывается сервер.
-        String address = "127.0.0.1"; // это IP-адрес компьютера, где исполняется наша серверная программа.
-        // Здесь указан адрес того самого компьютера где будет исполняться и клиент.
-        try {
-            InetAddress ipAddress = InetAddress.getByName(address); // создаем объект который отображает вышеописанный IP-адрес.
-
-            Socket socket = new Socket(ipAddress, serverPort); // создаем сокет используя IP-адрес и порт сервера.
-            System.out.println("Yes! I just got hold of the program.");
-            // Берем входной и выходной потоки сокета, теперь можем получать и отсылать данные клиентом.
-            InputStream sin = socket.getInputStream();
-            OutputStream sout = socket.getOutputStream();
-            // Конвертируем потоки в другой тип, чтоб легче обрабатывать текстовые сообщения.
-            DataInputStream in = new DataInputStream(sin);
-            DataOutputStream out = new DataOutputStream(sout);
-            // Создаем поток для чтения с клавиатуры.
-            String line = "";
-            while (true) {
-                System.out.println("Відправлюємо JSON: на сервер...");
-                out.writeUTF(lateJSON.toJSONString()); // отсылаем введенную строку текста серверу.
-                out.flush(); // заставляем поток закончить передачу данных.
-                line = in.readUTF(); // ждем пока сервер отошлет строку текста.
-                System.out.println("The server was very polite. It sent me this : " + line);
-                System.out.println("Looks like the server is pleased with us. Go ahead and enter more lines.");
-                System.out.println();
-            }
-        } catch (Exception x) {
-            x.printStackTrace();
-        }
+        }*/
+        return lateJSON.toJSONString();
     }
-    @FXML
-    public void importXML() throws IOException{
+    public String getXML(){
         String date = "", list = "";
         for (int i = 0; i < lateList.size(); i++) {
             if (lateList.get(i).getLateDate().toString().equals(lateDate.getValue().toString())){
@@ -172,41 +142,34 @@ public class Controller {
             }
         }
         String xml = "<LateList>" +
-                     "<Date>" + date + "</Date>" +
-                     "<List>" + list + "</List>" +
-                     "</LateList>";
+                "<Date>" + date + "</Date>" +
+                "<List>" + list + "</List>" +
+                "</LateList>";
+        /* Запис в файл
         try (FileWriter file = new FileWriter("/Users/Asus/Desktop/sample.xml")) {
             file.write(xml);
-        }
-        System.out.println(xml);
-        /**/
-        int serverPort = 1234; // здесь обязательно нужно указать порт к которому привязывается сервер.
-        String address = "194.44.128.158"; // это IP-адрес компьютера, где исполняется наша серверная программа.
-        // Здесь указан адрес того самого компьютера где будет исполняться и клиент.
-        try {
-            InetAddress ipAddress = InetAddress.getByName(address); // создаем объект который отображает вышеописанный IP-адрес.
-
-            Socket socket = new Socket(ipAddress, serverPort); // создаем сокет используя IP-адрес и порт сервера.
-            System.out.println("Yes! I just got hold of the program.");
-            // Берем входной и выходной потоки сокета, теперь можем получать и отсылать данные клиентом.
-            InputStream sin = socket.getInputStream();
-            OutputStream sout = socket.getOutputStream();
-            // Конвертируем потоки в другой тип, чтоб легче обрабатывать текстовые сообщения.
-            DataInputStream in = new DataInputStream(sin);
-            DataOutputStream out = new DataOutputStream(sout);
-            // Создаем поток для чтения с клавиатуры.
-            String line = "";
-            while (true) {
-                System.out.println("Відправлюємо XML: на сервер...");
-                out.writeUTF(xml); // отсылаем введенную строку текста серверу.
-                out.flush(); // заставляем поток закончить передачу данных.
-                line = in.readUTF(); // ждем пока сервер отошлет строку текста.
-                System.out.println("The server was very polite. It sent me this : " + line);
-                System.out.println("Looks like the server is pleased with us. Go ahead and enter more lines.");
-                System.out.println();
-            }
-        } catch (Exception x) {
-            x.printStackTrace();
-        }
+        }*/
+        return xml;
     }
+    @FXML
+    public void importJSON() throws Exception{
+        SendController.data = getJSON();
+        Stage stage = new Stage();
+        Parent sendPanel = FXMLLoader.load(getClass().getResource("../view/sendPanel.fxml"));
+        stage.getIcons().add(new Image("file:src/sample/logo_32x32.png"));
+        stage.setTitle("Відправка даних на сервер");
+        stage.setScene(new Scene(sendPanel));
+        stage.show();
+    }
+    @FXML
+    public void importXML() throws Exception{
+        SendController.data = getXML();
+        Stage stage = new Stage();
+        Parent sendPanel = FXMLLoader.load(getClass().getResource("../view/sendPanel.fxml"));
+        stage.getIcons().add(new Image("file:src/sample/logo_32x32.png"));
+        stage.setTitle("Відправка даних на сервер");
+        stage.setScene(new Scene(sendPanel));
+        stage.show();
+    }
+
 }
